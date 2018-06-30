@@ -23,16 +23,11 @@ guessBtn.addEventListener('click', function (e) {
         setMessage(`Please Enter  a Number Between <b>${min} </b> and ${max}`, 'red');
     }
     if (guess === winningNumber) {
-        // guessNumber.style.borderColor = 'green';
-        // guessNumber.disabled = true;
-        // setMessage(`You WIN, You've entered a correct Number ${winningNumber}`, 'green');
         gameOver(true, `You WIN, ${winningNumber} is Correct Number`);
     }
     else {
         totalChances -= 1;
         if (totalChances === 0) {
-            // guessNumber.disabled = true;
-            // setMessage(`You Have Lost The Game,  The Correct Number Was ${winningNumber}`, 'red');
             gameOver(false, `Game Over, Correct Number was ${winningNumber}`);
         }
         else {
@@ -62,7 +57,6 @@ function gameOver(won, msg) {
     message.style.color = color;
     message.textContent = msg;
 
-    // setMessage(msg);
     guessBtn.value = 'Play Again';
     guessBtn.className += 'play-again';
 }
